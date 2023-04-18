@@ -1,0 +1,16 @@
+{
+  "name": "GoMeet",
+  "short_name" :"GoMeet",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0A070F",
+  "background_color": "#0A070F",
+  "icons": [{
+      "src": "/logo2.png",
+      "sizes": "240x240",
+      "type": "image/png"
+  }],
+  "description": "GoMeet",
+  "status": "ok"
+}

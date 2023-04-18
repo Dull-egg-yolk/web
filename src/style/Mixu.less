@@ -1,0 +1,1346 @@
+@import url(../assets/fonts/tumile/font.less);
+// 深色
+@cdrak-v1: #0A070F;
+@cdrak-v2: #302E3D;
+@cdrak-v3: #243140;
+@cdrak-v4: #2c333c;
+@cdrak-v5: #6b7b8f;
+@cdrak-v6: #111a27;
+
+// 灰色
+@cgray-v1: #BEBCDF;
+@cgray-v2: #8394a9;
+@cgray-v3: #eaeaef;
+@cgray-v4: #f4f4f6;
+
+// 橙黄
+@corange-v1: #ff8854;
+@corange-v2: #ffc214;
+@corange-v3: rgb(255, 224, 87);
+@corange-v4: #af6c00;
+@corange-v5: #ffdf58;
+
+// 红
+@cred-v1: #ff4f46;
+@cred-v2: #FF5858;
+
+// 紫色
+@cpurple-v1: #FF5374;
+
+// 渐变色
+@gradient-orange: linear-gradient(140deg, #ed9848 0%, #ff5e8d 100%);
+@gradient-blue: linear-gradient(138deg, #ed9848 0%, #FF4D4D 100%);
+@gradient-orange-v2: linear-gradient(140deg, @corange-v3 0%, @corange-v1 100%);
+
+@gradient-dark-v1: linear-gradient(0deg,
+    rgba(14, 20, 27, 0) 0%,
+    rgba(14, 20, 27, 0.8) 90%);
+
+// 背景颜色
+#app {
+  background: @cdrak-v1;
+  color: @cgray-v1;
+}
+
+.page-wrap {
+  padding-right: 96px;
+  background: url(~@/assets/img/tumile/page-bg.png) top center no-repeat;
+  background-size: 100% auto;
+}
+
+// 侧边栏  =========================================
+.side-bar {
+  .side-body {
+    height: 80px;
+    background: #302E3D;
+    color: #fff;
+  }
+
+  // logo  ----------
+  .logo {
+    margin: 0 20px 0 40px;
+
+    .icon {
+      display: block;
+      width: 110px;
+      height: 40px;
+      background: url(~@/assets/img/tumile/logo.png) center no-repeat;
+      background-size: 100% auto;
+    }
+  }
+
+  // menu ----------
+  .menu li {
+    margin: 0 5px;
+    padding: 0 15px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+
+    &:hover {
+      opacity: 0.55;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+
+    }
+  }
+
+  // download
+  .download {
+    background: @corange-v2 url(~@/assets/img/tumile/icon-phone.png) center no-repeat;
+    background-size: auto 20px;
+  }
+
+  // login
+  .login {
+    background: #F99E47;
+    background-image: linear-gradient(135deg, #F99E47 0%, #FF3463 100%);
+    border-radius: 20px;
+    padding: 5px;
+    color: #fff;
+
+    .txt {
+      display: inline-block;
+      padding: 0 10px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .icon-user {
+      background: #000;
+      width: 32px;
+      height: 32px;
+      border: solid 2px #fff;
+      border-radius: 50px;
+      font-size: 14px;
+    }
+  }
+
+  // coin
+  .side-coin {
+    background-image: linear-gradient(135deg, #F99E47 0%, #FF3463 100%);
+    padding: 0 6px;
+
+    .coin-wrap {
+      padding: 0 34px 0 8px;
+      background: url(~@/assets/img/tumile/icon-s-coin.png) right center no-repeat;
+      background-size: auto 26px;
+
+      span {
+        font-size: 12px;
+        transform: scale(0.85);
+        transform-origin: left center;
+        padding-right: 12px;
+      }
+
+      strong {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      ;
+    }
+
+  }
+
+  // side-profile
+  .side-profile {
+    .avatar {
+      border: solid 1px #fff;
+      box-sizing: border-box;
+    }
+
+    .txt {
+      color: @corange-v2;
+    }
+  }
+
+  .side-setting {
+    color: #fff;
+  }
+
+  // 侧边弹框
+  .side-pop {
+    &.down {
+      .inner {
+        background: @cdrak-v2;
+        border-radius: 20px;
+        border: solid 1px @cdrak-v3;
+      }
+    }
+
+    &.profile {
+      background: @cdrak-v1;
+    }
+  }
+
+  // app下载
+  .side-download {
+    .cancel {
+      background: #000;
+      color: #fff;
+    }
+
+    .odl {
+      background: @cdrak-v1;
+
+      .cover {
+        .icon {
+          background: @cdrak-v1 url(~@/assets/img/tumile/icon-dl.png) 0 0 no-repeat;
+          background-size: auto 100%;
+        }
+      }
+
+      h3 {
+        color: #fff;
+      }
+
+      .btn {
+        background: @corange-v5;
+        color: @corange-v4;
+      }
+    }
+  }
+
+  // 个人详情
+  .side-user {
+    .im-page-title {
+      background: transparent;
+    }
+
+    .btn-setting {
+      color: #fff;
+      background: #000;
+      border-radius: 50%;
+    }
+
+    .user-control {
+      box-sizing: border-box;
+      background: @cdrak-v2;
+      height: 100%;
+      right: 0;
+      top: 0;
+
+      li {
+        color: @cgray-v1
+      }
+    }
+
+  }
+}
+
+// 登录框 =========================================
+.pop-login-content {
+  color: @cgray-v4;
+  background: @cdrak-v2 url(~@/assets/img/tumile/login-bg.png) right top no-repeat;
+  background-size: auto 90%;
+  width: 860px;
+  height: 600px;
+  flex-direction: row-reverse;
+
+  .login-main {
+    .active-number {
+      .slogn {
+        color: #fff;
+      }
+    }
+  }
+
+  .step-login-way {
+    .btn-google {
+      color: @cdrak-v1;
+    }
+
+    .email-login {}
+  }
+
+  .logo-info {
+    width: 424px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+// 女神墙 =========================================
+.goddess-wall {
+
+  // 标题
+  .m-page-title {
+
+    .title-txt {
+      font-weight: normal;
+
+      small {
+        color: @corange-v2;
+      }
+    }
+  }
+
+  // 分类标签
+  .sort-tags {
+    .the-list {
+      li {
+        color: @cgray-v1;
+        background: rgba(10,7,15,0.18);
+        border: 0.5px solid #0A070F;
+        border-radius: 30px;
+
+        &:not(.cur):hover {
+          color: #fff;
+          background: rgba(10,7,15,0.58);
+        }
+
+        &.cur {
+          background: @gradient-blue;
+        }
+      }
+    }
+  }
+
+  // 女神墙列表
+  .goddess-list {
+
+    // item
+    .ogoddess {
+      background: @cdrak-v3;
+
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+
+        .ico-call {
+          transform: translateY(-4px);
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        box-sizing: border-box;
+        border: solid 1px rgba(255, 255, 255, 0.8);
+        box-shadow: inset 0 0 10px 4px rgba(255, 255, 255, 0.2);
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+
+      .cover {
+        background: @cdrak-v2;
+        padding-top: 180%;
+      }
+
+      .detail {
+        .info {
+          color: #fff;
+        }
+      }
+      .ico-call {
+        width: 120px;
+        height: 50px;
+        bottom: 10px;
+        left: 50%;
+        margin-left: -60px;
+        background: @gradient-orange;
+        border-radius: 50px;
+        color: #fff;
+        flex-direction: column;
+
+        .icon-video2 {
+          font-size: 24px;
+        }
+
+        .price {
+          transform: scale(0.8);
+          font-weight: bold;
+          margin-bottom: -4px;
+
+          .ico {
+            background: url(~@/assets/img/tumile/icon-s-coin.png) center no-repeat;
+            background-size: 100% auto;
+          }
+        }
+      }
+    }
+
+    // 加载占屏
+    &.init {
+      .ogoddess {
+        &:hover {
+          &::after {
+            opacity: 0;
+          }
+        }
+
+        .detail {
+          opacity: 0.5;
+
+          .name,
+          .location {
+            border-radius: 24px;
+            background-color: @cdrak-v3;
+          }
+
+          .status-txt-tag {
+            background: @cdrak-v1;
+            width: 60px;
+          }
+        }
+
+        .logo {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 36%;
+          height: 36%;
+          background: url(~@/assets/img/tumile/icon-logo-ph.png) center no-repeat;
+          background-size: 100% auto;
+          margin: -18% 0 0 -18%;
+          animation: jumpAni 1s infinite;
+        }
+      }
+    }
+  }
+}
+
+// 好友列表=========================================
+.friend-page {
+  .im-page-side {
+    .search-box {
+      text-align: center;
+    }
+  }
+
+  .friend-actions {
+    .btn {
+      color: #fff;
+      background: @gradient-orange;
+      transition: all 0.2s;
+      box-sizing: border-box;
+      border: solid 1px rgba(255, 255, 255, 0);
+
+      .ico {
+        font-size: 28px;
+      }
+
+      &:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+        border: solid 1px @corange-v3;
+      }
+
+      // .num{
+      //   display: inline-flex;
+      //   align-items: center;
+      // }
+      // .ico-coin{
+      //   display: inline-block;
+      //   width: 16px;
+      //   height:16px;
+      //   background:url(~@/assets/img/tumile/icon-s-coin.png) no-repeat;
+      //   background-size: 100%;
+      // }
+    }
+  }
+}
+
+
+.profile-page {
+  .im-page-title {
+    background-color: transparent;
+  }
+}
+
+// 好友详情
+.profile-detail {
+  .cover-img {
+    background: #000;
+  }
+
+  .user-name {
+    color: #fff;
+  }
+
+  .sort-title {
+    color: @corange-v3;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: @corange-v4;
+      background: @corange-v3;
+      border-radius: 50%;
+      font-size: 12px;
+    }
+  }
+}
+
+// 聊天  =========================================
+.chat-page {
+  .im-page-side {
+    .im-page-title {
+      border-bottom: solid 1px @cdrak-v3
+    }
+
+    .clear-box {
+      &::after {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: #fff;
+        border-radius: 4px;
+        transform: rotate(45deg);
+        top: -4px;
+        left: 50%;
+        margin-left: -10px;
+        z-index: 1;
+      }
+
+      .oitem {
+        background: #fff;
+        color: @cdrak-v1;
+        border-bottom: solid 1px @cgray-v3;
+
+        &:hover {
+          background: @cgray-v4;
+        }
+      }
+
+    }
+
+  }
+
+  .im-page-body {
+    .im-page-title {
+      background: @cdrak-v6;
+    }
+  }
+}
+
+// 聊天框
+.dialog-box {
+
+
+  .dialog-placeholder {
+    color: @cgray-v2;
+    padding-top: 170px;
+    background: url(~@/assets/img/tumile/img-chat-pl.png) center 60px no-repeat;
+  }
+
+  .dialog-list {
+    .odialog {
+      .txt {
+        background: @cdrak-v2;
+        border-radius: 0px 12px 12px 12px;
+        color: #fff;
+      }
+
+      &.me {
+        .txt {
+          background: @cpurple-v1;
+          border-radius: 12px 0px 12px 12px;
+        }
+      }
+    }
+  }
+
+  .dialog-action {
+    border-top: solid 1px #3C3C3C;
+
+    .dialog-send {
+      background: #0A070F;
+      border: solid 1px #302E3D;
+
+      .textArea {
+        color: #fff;
+      }
+
+    }
+
+    .dialog-quick-btn {
+
+      .obtn,
+      .cbtn {
+        font-size: 24px;
+      }
+
+      .cbtn {
+        height: 50px;
+        padding: 0 10px;
+
+        span {
+          display: inline-flex;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &.gift {
+          span {
+            background: url(~@/assets/img/tumile/img-gift.png) center no-repeat;
+            background-size: 34px auto;
+          }
+
+        }
+
+        &.call {
+          color: #39DFB3;
+
+          span {
+            font-size: 32px;
+          }
+
+        }
+
+      }
+    }
+
+    .btn-send {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .emoji-list {
+      background: @cdrak-v3;
+      border: solid 1px @cdrak-v3;
+
+      &::after {
+        background: @cdrak-v3;
+      }
+    }
+  }
+}
+
+
+// 通用弹框
+.base-popup {
+  color: @cdrak-v1
+}
+
+
+.h-tag{
+  display:inline-block;
+  margin:0 1px;
+  font-weight:bold;
+  font-size:14px;
+  padding: 5px 10px;
+  background-image: linear-gradient(119deg, #F99E47 0%, rgba(111,66,230,0.00) 94%);
+  border-radius: 6px;
+  transform: skewX(-12deg);
+  color:#fff;
+  &.min{
+    font-size:12px;
+    padding:2px 8px;
+  }
+}
+
+
+// 通用定制 =========================================
+.avatar-img {
+  background: @cdrak-v1;
+}
+
+// 文字状态tag
+.status-txt-tag {
+  &.online {
+    background: rgba(18, 222, 2);
+    border: solid 1px #11ff00;
+  }
+
+  &.busy {
+    background: rgba(222, 52, 2);
+    border: solid 1px #ff0000;
+  }
+
+  &.offline {
+    background: rgba(18, 222, 2);
+    border: solid 1px #11ff00;
+    display:none
+  }
+}
+
+.im-page-title {
+  background: @cdrak-v2;
+
+  .action {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    color: #fff;
+  }
+}
+
+// layout =========================================
+.im-page-layout {
+  background-color: @cdrak-v2;
+  border: solid 1px @cdrak-v4;
+  overflow: hidden;
+
+  .im-page-body {
+    background: @cdrak-v1;
+
+  }
+}
+
+// ----- m-cell-list 通用列表 ----- //
+.m-cell-list {
+  .ocell {
+    color: #fff;
+
+    &:not(.cur):hover {
+      background: @cdrak-v1;
+    }
+
+    &.cur {
+      background: @gradient-orange;
+    }
+  }
+
+  &.white {
+    .ocell {
+      color: @cdrak-v1;
+
+      &:not(.cur):hover {
+        background: @cgray-v4;
+      }
+
+      &.cur {
+        color: #fff;
+      }
+    }
+
+
+  }
+}
+
+.m-user-list {
+  .ocell {
+    .cell-main {
+      p {
+        opacity: 0.6;
+      }
+    }
+
+    .cell-right {
+      .time {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+// 通用tag
+.m-tag {
+  &.hobby {
+    border: solid 1px @corange-v3;
+    background: rgba(255, 245, 200, 0.1);
+    color: @corange-v3;
+  }
+}
+
+
+// 通用蓝色小按钮
+.m-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 20px;
+  min-width: 140px;
+  box-sizing: border-box;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.3s;
+  font-weight: 700;
+
+  &.bk {
+    display: flex;
+    width: 100%;
+  }
+
+  &.major {
+    background: @corange-v5;
+    color: @corange-v4;
+  }
+
+  &.white {
+    background: #fff;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.disabled {
+    opacity: .5;
+  }
+
+  &.mini {
+    height: 32px;
+    min-width: 65px;
+    font-size: 12px;
+  }
+}
+
+
+
+// 异常样式 abnormal
+.abnormal-box {
+  color: @cgray-v2;
+
+  .img-empty {
+    height: 156px;
+    // background: url(~@/assets/img/tumile/img-empty.png) center no-repeat;
+  }
+}
+
+// 通用input框
+.m-input-box {
+  background: @cdrak-v2;
+  color: @cgray-v4;
+}
+
+// placeHolder 颜色
+::-webkit-input-placeholder {
+  color: @cdrak-v5;
+}
+
+:-moz-placeholder {
+  color: @cdrak-v5;
+}
+
+:-ms-input-placeholder {
+  color: @cdrak-v5;
+}
+
+// 气泡提示
+.bubble {
+  background: @cred-v2;
+  color: #fff;
+  height: 20px;
+  min-width: 20px;
+}
+
+// 扩展用户操作 弹框 ===========
+.pop-user-action {
+  .inner {
+    background: @cdrak-v2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+    .ocell {
+      transition: all 0.4s;
+
+      &:hover {
+        background: @cdrak-v1;
+      }
+
+      .cell-left {
+        display: none;
+      }
+    }
+  }
+}
+
+// 电话拨打 应答弹框 ===========
+.invite-call-pop {
+  .pop-content {
+    // background: @gradient-orange;
+
+    .ring-bell {
+      color: #fff;
+      // background: url(~@/assets/img/tumile/ringbell-bg.png) center no-repeat;
+      // background-size: auto 100%;
+
+      .call-info {
+        background: rgba(0, 0, 0, 0.1);
+        color: #fff;
+        border-radius: 40px;
+
+        .call-type .icon {
+          font-size: 20px;
+          margin-right: 10px;
+        }
+
+        &>* {
+          margin: 0 10px;
+        }
+
+
+      }
+
+      .user-info {
+
+        .tips {
+          opacity: .6;
+          margin-bottom: 40px;
+        }
+
+        .name {
+          font-size: 20px;
+          height: 26px;
+          line-height: 32px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          font-weight: bold;
+          margin: 0 40px 0px;
+        }
+
+        .user-tags {
+          opacity: .6;
+        }
+        .tag-list{
+          margin-bottom:0;
+          &.user-tags{
+            margin-bottom:5px;
+          }
+          .m-tag{
+              margin:0 2px 0 2px;
+          }
+        }
+        .call-price {
+          display:inline-block;
+          padding-left: 24px;
+          margin-top: 20px;
+          background: url(~@/assets/img/tumile/icon-s-coin.png) 0 center no-repeat;
+          background-size: auto 18px;
+        }
+      }
+
+      .actions {
+        .btns {
+          .btn {
+            .ico {
+              // border: solid 2px rgba(255, 255, 255, 0.3);
+
+            }
+
+            &.cancel {
+              .ico {
+                background: @cred-v2;
+              }
+            }
+
+            &.accept {
+              .ico {
+                background: #0DEE5E;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 视频聊天弹窗样式 ===========
+.video-chat {
+  .video-container {
+  }
+
+  .video-cell {
+    .coin-info {
+      background: linear-gradient(135deg, #F99E47 0%, #FF3463 100%);
+      
+
+      .icon-coin {
+        display:inline-block;
+        width: 24px;
+        margin-left:5px;
+        height:24px;
+        background:  url(~@/assets/img/tumile/icon-s-coin.png) center no-repeat;
+        background-size: auto 20px;
+      }
+    }
+  }
+
+  .action-btn {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  // 变形
+  .dialog-box {
+    .dialog-list {
+      .odialog {
+        .txt {
+          background: @cdrak-v3;
+          color: #fff;
+        }
+
+        &.me {
+          .txt {
+            color: @corange-v5;
+          }
+        }
+      }
+    }
+
+    .dialog-action {
+      background: transparent;
+
+      .dialog-send {
+        background: rgba(255, 255, 255, 0.2);
+        height: 48px;
+        border-radius: 100px;
+
+        .translate {
+          margin-left: 14px;
+          width: 20px;
+          height: 20px;
+        }
+
+        .btn-send {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+// 设置弹框
+.pop-setup {
+  .im-page-title {
+    background: transparent
+  }
+}
+
+
+// recommend list
+.recommend-list {
+  background: @cdrak-v1;
+
+  .list-title {
+
+    h2 small,
+    .refresh {
+      color: @corange-v5
+    }
+  }
+
+  .the-list {
+    .oGd {
+      background-color: @cdrak-v2;
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        box-sizing: border-box;
+        border: solid 1px rgba(255, 255, 255, 0.8);
+        box-shadow: inset 0 0 10px 4px rgba(255, 255, 255, 0.2);
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+
+        .actions {
+          transform: scale(1.1);
+
+        }
+      }
+
+      .actions {
+        .btn-call {
+          background: @gradient-orange;
+          color: #fff;
+        }
+
+        .btn-addF {
+          background: @cdrak-v2;
+          color: @corange-v5
+        }
+      }
+    }
+
+
+    &.init {
+      .oGd {
+        .actions {
+          &>* {
+            background: @cdrak-v1;
+          }
+        }
+
+        &:hover {
+          &::before {
+            opacity: 0;
+          }
+
+          .actions {
+            transform: none;
+          }
+        }
+
+        .logo {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 36%;
+          height: 36%;
+          background: url(~@/assets/img/tumile/icon-logo-ph.png) center no-repeat;
+          background-size: 100% auto;
+          margin: -18% 0 0 -18%;
+          animation: jumpAni 1s infinite;
+        }
+      }
+    }
+  }
+
+
+
+
+}
+
+
+
+.pop-public {
+  .pop-content {
+    background-image: linear-gradient(180deg, #FFF4C3 0%, #FFFFFF 13%);
+
+    .pop-action {
+      .m-btn.white {
+        background: @cgray-v4
+      }
+    }
+  }
+}
+
+
+
+
+// mobile
+@media screen and(max-width:680px) {
+  #app {
+
+    // 通用样式
+    // 页面标题
+    .m-page-title {}
+
+    .pop-login-content {
+      .login-main {
+        .active-number {
+          background-size: auto 100px;
+        }
+      }
+    }
+
+
+    // 侧边栏  =========================================
+    .side-bar {
+      .side-body {
+        background: @cdrak-v2;
+        background: linear-gradient(90deg,
+            #162436 0%,
+            #1e3147 41.67%,
+            #22354c 62.12%,
+            #282b47 100%);
+
+        .login {
+          .icon-person {
+            border: solid 1px @cdrak-v4;
+            color: @cdrak-v5;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    // 女神墙
+    .goddess-wall {
+      .m-page-title {
+        .title-txt {
+          small {
+            display: none;
+          }
+        }
+      }
+    }
+
+    // profile page
+    .profile-page {
+      .friend-actions {
+        .btn-chat {
+          background: #fff;
+          color: @corange-v1
+        }
+      }
+    }
+
+    // dialog box
+    .dialog-box {
+      .dialog-action {
+        .dialog-quick-btn {
+          .obtn {
+            span {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              width: 32px;
+              height: 32px;
+              background-color: rgba(255, 255, 255, .1);
+              border-radius: 50%;
+              font-size: 16px;
+            }
+
+          }
+
+          .cbtn {
+            height: 32px;
+
+            &.gift {
+              span {
+                background-size: 24px auto;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    // 1v1视频聊天
+    .video-chat {
+      .cancel-video {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .chat-cell {
+        .dialog-list {
+          .odialog {
+            .txt {
+              background-color: rgba(0, 0, 0, .3);
+              border-radius: 20px;
+            }
+          }
+        }
+      }
+
+      .video-cell {
+        .coin-info {
+          background-color: rgba(255, 255, 255, .2)
+        }
+      }
+
+    }
+
+
+  }
+}
+
+// 通用列表
+.common-list {
+  .sort-title {
+    height: 40px;
+    padding: 0 20px;
+    color: #fff;
+  }
+
+  &.menu{
+    .ocell{
+      .cell-main{
+        padding:0;
+      }
+    }
+  }
+
+  .ocell {
+    cursor: pointer;
+    height: 88px;
+    transition: all .3s;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    &:hover {
+      transform: translateX(-2px);
+    }
+
+    .cell-main {
+      padding: 0 10px;
+      flex: 1;
+    }
+
+    .cell-left {
+      width: 60px;
+
+      .avatar-img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}
+
+.im-panel {
+  position: fixed;
+  height: 100%;
+  right: 0;
+  top: 0;
+  width: 464px;
+  z-index: 20;
+  box-sizing: border-box;
+  padding-top: 80px;
+  background: #17161F;
+  overflow: hidden;
+
+  .p-wrap {
+    height: 100%;
+
+    .p-body {
+      flex: 1;
+    }
+  }
+
+  .p-title {
+    height: 84px;
+    margin: 0 20px;
+    border-bottom: solid 1px #3C3C3C;
+
+    .t-txt{
+      font-size:16px;
+      color:#fff;
+    }
+    &.noline {
+      border: 0;
+    }
+
+    .icon-arrow {
+      font-size: 16px;
+      color: #fff;
+      padding: 15px 15px 15px 0;
+      margin-right: 15px;
+    }
+
+  }
+
+  .p-body {
+    height: 0;
+  }
+}

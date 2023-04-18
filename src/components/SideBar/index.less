@@ -1,0 +1,487 @@
+@import url('~@/style/var.less');
+.side-bar {
+  .side-body {
+    display: flex;
+    align-items: center;
+    overflow-y: auto;
+    position: relative;
+    z-index: 10;
+    justify-content: space-between;
+  }
+
+  .mb-drop{
+    display:none;
+  }
+  .logo {
+    cursor: pointer;
+    transition: transform 0.4s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  .menu {
+    flex: 1;
+    justify-content: flex-start;
+    li {
+      text-align: center;
+      line-height: 1;
+      transition: opacity 0.4s;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .active{
+      text-decoration: underline;
+    }
+  }
+
+  .user {
+    flex: 0 0 auto;
+    align-items: center;
+    padding-right: 30px;
+  }
+
+  .pcInstallWA{
+    font-size: 14px;
+    border:solid 1px rgba(221, 147, 255, .5);
+    width: 90px;
+    height: 40px;
+    border-radius: 100px;
+    color: #fff;
+    margin-right:20px;
+
+  }
+
+  .side-coin {
+    border-radius: 40px;
+    .coin-wrap{
+      position: relative;
+      height: 40px;
+      line-height: 1;
+      box-sizing: border-box;
+      color: #000;
+    }
+  }
+
+  .login {
+    text-align: center;
+    line-height: 1;
+    .icon-user {
+      box-sizing: border-box;
+    }
+    .txt {
+      display: block;
+      color: #000;
+    }
+  }
+
+  .side-profile {
+    text-align: center;
+    margin-left: 20px;
+    .avatar {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .side-setting{
+    font-size:20px;
+    margin:0 40px;
+  }
+
+  .side-pop-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    left: 0;
+    top: 0;
+    z-index: 2;
+    transition: opacity 0.3s;
+  }
+
+  .checkin-tips {
+    position: fixed;
+    right: 90px;
+    top: 60px;
+    padding-top: 10px;
+    display: flex;
+    z-index: 99;
+    .tips-info {
+      border-radius: 8px;
+      width: 340px;
+      height: 57px;
+      font-size: 13px;
+      color:#0B0715FF;
+      line-height: 15px;
+      position: relative;
+      display: flex;
+      padding-top: 10px;
+      box-sizing: border-box;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: url(~@/assets/img/check-in-tip-bg.png) top center no-repeat;
+        background-size: cover;
+      }
+      .tips-info-txt {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 60px;
+      }
+      .tips-info-btn {
+        width: 82px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+          width: 70px;
+          height: 27px;
+          line-height: 27px;
+          text-align: center;
+          background: #FFFFFF;
+          border-radius: 14px;
+        }
+
+      }
+      em {
+        font-weight: bold;
+      }
+    }
+
+    .tips-info-vip {
+      border-radius: 8px;
+      width: 340px;
+      height: 57px;
+      font-size: 13px;
+      background: #FFECD3 url(~@/assets/img/checkin-tips-bg.png) left bottom no-repeat;
+      background-size: 82px;
+      color: #000;
+      display: flex;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        top: 4px;
+        right: 30px;
+        z-index: -1;
+        background: #FFECD3;
+        border-radius: 3px;
+        transform: rotate(45deg);
+      }
+
+      .tips-info-txt {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding-left: 60px;
+      }
+    }
+  }
+
+
+  .user-set-pop{
+    position:absolute;
+    right: 20px;
+    top: 90px;
+    z-index:10;
+    background:#17161F;
+    width:165px;
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+    border-radius: 12px;
+    box-sizing: border-box;
+    padding:15px 20px;
+    text-align:center;
+    .ocell{
+      height:40px;
+      font-size:16px;
+      &.logout{
+        color:#FF4646
+      }
+    }
+  }
+}
+[lang="ar"],
+[lang="he"],
+[lang="ur"] {
+  .side-bar {
+    .side-profile {
+      text-align: center;
+      margin:0 20px;
+  }
+  .checkin-tips {
+    left: 70px;
+    right: auto;
+    .tips-info {
+      padding-left: 10px;
+        &:before {
+          transform: rotateY(180deg);
+        }
+        &::after {
+          left: 30px;
+          right: auto;
+        }
+        .tips-info-txt {
+          padding-left: 0;
+          padding-right: 60px;
+          justify-content: flex-end;
+        }
+      }
+    .tips-info-vip {
+      &::after {
+        left: 30px;
+        right: auto;
+      }
+      .tips-info-txt {
+        padding-right: 10px;
+      }
+    }
+  }
+}
+  .side-bar .side-coin .coin-wrap {
+    padding: 0 14px 0 8px;
+    background: url(/img/icon-s-coin.aee9711f.png) left center no-repeat;
+    background-size: auto 26px;
+    strong {
+      margin-left: 20px;
+    }
+    span {
+      transform-origin: right center;
+    }
+  }
+
+  .side-bar .user-set-pop{
+    left:20px ;
+    right: auto;
+  }
+}
+// mobile
+@media screen and(max-width: 680px) {
+  // 侧边栏样式
+  .side-bar {
+    padding: 0;
+    width: 100%;
+    position:static;
+    z-index:auto;
+    &.hide{
+      height:0;
+    }
+    &.spc{
+      .side-body{
+        .user{
+          .side-coin {
+            right:60px;
+          }
+        }
+      }
+    }
+    &.none{
+      display:none;
+    }
+    .side-body {
+      height: 50px;
+      flex-direction: row;
+      border-radius: 0;
+      overflow: auto;
+      overscroll-behavior: contain;
+      position:static;
+      z-index:auto;
+      .menu{
+        display: none;
+      }
+
+      .mb-drop{
+        display: flex;
+        position:absolute;
+        left:0;
+        top:0;
+        width: 50px;
+        height:50px;
+        font-size: 16px;
+        color:#BEBCDF
+      }
+      .logo {
+        margin: 0;
+        display: flex;
+        &:hover {
+          transform: scale(1);
+        }
+        .icon{
+          width:120px;
+          display: block;
+          background-size: auto 24px;
+        }
+        .logo-setting {
+          height: 54px;
+          width: 20px;
+          background: url(~@/assets/img/tumile/setting-logo.png) center no-repeat;
+          background-size: auto 20px;
+          margin-left: 10px;
+        }
+      }
+      .user {
+        position:fixed;
+        right:0;
+        top: 0;
+        padding-right:10px;
+        height:50px;
+        z-index:120;
+        .avatar {
+          position: fixed;
+          top: 14px;
+          left: 14px;
+          margin: 0;
+          width: 32px;
+          height: 32px;
+        }
+        .download {
+          display: none;
+        }
+
+        .pcInstallWA{
+          display: none;
+        }
+
+        .side-coin {
+          position: fixed;
+          right: 10px;
+          top:11px;
+          margin: 0;
+          padding: 0 2px 0 10px;
+          z-index:10;
+          .coin-wrap{
+            height:28px;
+            background-size: auto 24px;
+            padding: 0 30px 0 2px;
+            span{
+              display: none;
+            }
+            strong{
+              font-size:14px;
+            }
+          }
+        }
+        .side-setting{
+          display:none;
+        }
+
+        .side-profile{
+          display:none;
+          .txt{
+            display: none;
+          }
+        }
+      }
+
+      .menu {
+        width:100%;
+        position:fixed;
+        top:50px;
+        background: #17161F;
+        flex-direction: column;
+        z-index:20;
+        li {
+          line-height:40px;
+          padding: 0;
+          margin: 0;
+          font-size: 12px;
+          flex:auto;
+          font-weight:normal;
+          .ico {
+            margin-bottom: 4px;
+          }
+          .txt {
+            display: block;
+            transform: scale(0.85);
+          }
+        }
+      }
+
+      .login {
+        margin: 0;
+        padding: 8px 5px;
+        .txt {
+          font-size: 14px;
+        }
+        .icon-user {
+          display: none;
+        }
+      }
+    }
+    .checkin-tips {
+      right: 10px;
+      top: 40px;
+      padding-top: 10px;
+      .tips-info {
+        border-radius: 8px;
+        width: 340px;
+        height: 57px;
+        line-height: 15px;
+        padding-top: 10px;
+      }
+
+
+    }
+
+  }
+  [lang="ar"],
+  [lang="he"],
+  [lang="ur"] {
+    .side-bar .side-body .user .side-coin .coin-wrap {
+      height: 28px;
+      background-size: auto 24px;
+      padding: 0 15px 0 2px;
+      strong {
+        padding-left: 10px;
+      }
+    }
+    .side-bar .side-body .user {
+      right: auto;
+      left:10px;
+      .side-coin {
+        position: static;
+      }
+    }
+    .side-bar {
+      padding: 0;
+      width: 100%;
+      position:initial;
+      z-index:auto;
+      &.hide{
+        height:0;
+      }
+      &.spc{
+        .side-body{
+          .user{
+            left: 45px;
+            .side-coin {
+              margin-left:10px;
+            }
+          }
+        }
+      }
+      &.none{
+        display:none;
+      }
+      .checkin-tips {
+        left: 10px;
+        right: auto;
+      }
+      .tips-info {
+        &:before {
+          transform: rotateY(180deg);
+        }
+        .tips-info-txt {
+          padding-left: 0;
+          padding-right: 70px;
+        }
+      }
+    }
+  }
+}

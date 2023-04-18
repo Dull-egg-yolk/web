@@ -1,0 +1,23 @@
+export default {
+  1: 'Musik',
+  2: 'Dans',
+  3: 'Yoga',
+  4: 'Cricket',
+  5: 'Fest',
+  6: 'Mode',
+  7: 'Shopping',
+  8: 'Fotografi',
+  9: 'Film',
+  10: 'Rejser',
+  11: 'Mad',
+  12: 'Kaffe',
+  13: 'Sport',
+  14: 'Hund',
+  15: 'Kat',
+  16: 'Skønhed',
+  17: 'Camping',
+  18: 'Læsning',
+  19: 'Madlavning',
+  20: 'Fodbold',
+  21: 'Kæledyr'
+};

@@ -1,0 +1,129 @@
+.rem-px-update-unit (@currentProperty) when (isunit(@currentProperty, "px")) {
+	@calculatedValue: unit(@currentProperty) / 32;
+	@calculatedProperty: ~"@{calculatedValue}rem";
+  }
+  
+  .rem-px-update-unit (@currentProperty) when not (isunit(@currentProperty, "px")) {
+	@calculatedProperty: @currentProperty;
+  }
+  
+  .rem-px-gen (@count, @pxIPList, @pxFPList, @propertyName) when (@count = 0) {
+	@{propertyName}: @pxFPList;
+  }
+  
+  .rem-px-gen (@count, @pxIPList, @pxFPList, @propertyName) when (@count > 0) {
+	@currentProperty: extract(@pxIPList, @count);
+  
+	.rem-px-update-unit(@currentProperty);
+	@udatedValue: @calculatedProperty;
+	@modifiedProperty: ~"@{udatedValue} @{pxFPList}";
+	.rem-px-gen(@count - 1, @pxIPList, @modifiedProperty, @propertyName);
+  }
+  
+  .rem-px(@propertyName, @propertyValue) {
+	//@{propertyName}: @propertyValue;
+	@count: length(@propertyValue);
+	.rem-px-gen(@count, @propertyValue, "", @propertyName);
+  }
+  
+  
+  .line-1px-t(@gray-lightest) {
+	content: '';
+	display:block;
+	width: 200%;
+	height: 1px;
+	background: @gray-lightest;
+	-webkit-transform: scale(0.5);
+	transform: scale(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index:1;
+  }
+  
+  // 1像素右边框
+  .line-1px-r(@gray-lightest) {
+	content: '';
+	display:block;
+	width: 1px;
+	height: 200%;
+	background: @gray-lightest;
+	-webkit-transform: scale(0.5);
+	transform: scale(0.5);
+	-webkit-transform-origin: 1px 0;
+	transform-origin: 1px 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index:1;
+  }
+  
+  // 1像素底部边框
+  .line-1px-b(@gray-lightest) {
+	content: '';
+	display:block;
+	width: 200%;
+	height: 1px;
+	background: @gray-lightest;
+	-webkit-transform: scale(0.5);
+	transform: scale(0.5);
+	-webkit-transform-origin: 0 1px;
+	transform-origin: 0 1px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index:1;
+  }
+  
+  // 1像素左边框
+  .line-1px-l(@gray-lightest){
+	content: '';
+	display:block;
+	width: 1px;
+	height: 200%;
+	background: @gray-lightest;
+	-webkit-transform: scale(0.5);
+	transform: scale(0.5);
+	-webkit-transform-origin: 0 1px;
+	transform-origin: 0 1px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index:1;
+  }
+  
+  // 1像素边框
+  .line-1px(@gray-lightest) {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200%;
+	height: 200%;
+	padding: 1px;
+	z-index:1;
+	content: '';
+	border: 1px solid @gray-lightest;
+	-webkit-transform: scale(0.5);
+	-webkit-box-sizing: border-box;
+	-webkit-transform-origin: 0 0;
+	transform: scale(0.5);
+	box-sizing: border-box;
+	transform-origin: 0 0;
+	pointer-events: none;
+  }
+  
+  // 溢出隐藏
+  .foldLine (@num) {
+	  display: -webkit-box;
+	  -webkit-box-orient: vertical;
+	  -webkit-line-clamp: @num;
+	  overflow: hidden;
+	  word-break: normal;
+	  word-wrap: break-word;
+  }
+  
+  // 进度条颜色值
+  @nprogress-color: #00C784;
+  

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="funnel" x="0px" y="0px" viewBox="0 0 59 59" style="enable-background:new 0 0 59 59;" xml:space="preserve">
+<g>
+	<defs>
+		<path id="SVGID_1_"
+              d="M24.359,57.754c-0.737-0.492-1.228-1.475-1.228-2.213V34.154L1.513,2.933    C1.022,2.196,0.777,1.213,1.268,0.229C1.759-0.508,2.496-1,3.479-1h54.043c0.983,0,1.72,0.492,2.211,1.229    c0.492,0.738,0.246,1.721-0.246,2.458L37.87,34.154v16.471c0,0.983-0.492,1.721-1.474,2.213l-9.826,4.917    C26.324,58,26.079,58,25.587,58C25.096,58,24.604,57.754,24.359,57.754z"/>
+	</defs>
+    <clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_" style="overflow:visible;"/>
+	</clipPath>
+    <g style="clip-path:url(#SVGID_2_);">
+		<defs>
+			<rect id="SVGID_3_" x="-58" y="-123" width="375" height="667"/>
+		</defs>
+        <clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_" style="overflow:visible;"/>
+		</clipPath>
+        <rect x="-4" y="-6" style="clip-path:url(#SVGID_4_);fill:#6b10ff;" width="69" height="69"/>
+	</g>
+</g>
+</svg>

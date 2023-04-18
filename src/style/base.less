@@ -1,0 +1,130 @@
+@import url(./var.less);
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  // scroll-behavior: smooth;
+}
+
+header {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+body,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: normal 12px/1.5 Futura,'PingFangSC-Regular', 'PingFang SC', Arial,
+    'Microsoft YaHei', sans-serif;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+a {
+  background-color: transparent;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+small {
+  font-size: 80%;
+}
+
+img {
+  border-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  border: 0;
+  outline: none;
+  scrollbar-highlight-color: transparent;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.5;
+  color:inherit
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+/**
+* Remove the default vertical scrollbar in IE 10+.
+*/
+
+textarea {
+  overflow: auto;
+  resize: none;
+}
+
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+*{
+  scrollbar-width: none; /* firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}

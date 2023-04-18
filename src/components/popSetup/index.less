@@ -1,0 +1,61 @@
+@import url('~@/style/var.less');
+.pop-setup {
+  overflow:hidden;
+  .m-page-title {
+    .icon-arrow {
+      height: 50px;
+      display:inline-flex;
+      &.home {
+        display: none;
+      }
+    }
+  }
+  .pop-content{
+    overflow:hidden;
+    display:flex;
+    flex-direction: column;
+    .im-page-title{
+      .action.back{
+        display: none;
+      }
+    }
+  }
+  .setup-body {
+    font-size: 14px;
+    height: 400px;
+    box-sizing: border-box;
+    overflow:auto;
+
+
+    .normal-list {
+      .ocell {
+        padding: 0 20px 0 14px;
+        height: 50px;
+        &.lang {
+          .cur-lang {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .pop-public.pop-setup {
+    .pop-content {
+      max-height: 400px;
+    }
+    .m-page-title {
+      .icon-arrow {
+        height: 60px;
+        &.home {
+          display: inline-flex;
+        }
+      }
+    }
+    .setup-body {
+      height:100%;
+    }
+  }
+}

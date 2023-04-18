@@ -1,0 +1,595 @@
+@import url("~@/style/var.less");
+
+.goddess-wall {
+  padding: 0px 0 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  margin: 0 auto;
+
+  .filter-box {
+    height: auto;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    // transition: all .4s;
+    // background: rgba(23,22,31,0.9);
+    z-index: 10;
+
+    .inner {
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    &.blur {
+      background: rgba(23, 22, 31, 0.9);
+      backdrop-filter: blur(13px);
+    }
+  }
+
+  &.init {
+    overflow: hidden;
+  }
+
+  // 分类信息
+  .sort-tags {
+    width: 100%;
+    height: 65px;
+    overflow: hidden;
+    user-select: none;
+    .wrap {
+      width: 100%;
+    }
+    .the-list {
+      li {
+        padding: 0 15px;
+        height: 60px;
+        font-size: 16px;
+        border-radius: 50px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all 0.4s;
+        box-sizing: border-box;
+        span {
+          display: inline-block;
+          min-width: 125px;
+          text-align: center;
+        }
+
+        &.cur {
+          color: #000;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .host-list {
+    overflow-y: auto;
+    padding: 90px 20px 0;
+    min-height: 100%;
+    box-sizing: border-box;
+  }
+
+  // 女神列表
+  .goddess-list {
+    padding: 15px 0 10px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 14px;
+
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    // overflow: auto;
+
+    .ogoddess {
+      border-radius: 16px;
+      // overflow: hidden;
+      cursor: pointer;
+      // max-width: 200px;
+      position: relative;
+      margin-bottom: 30px;
+
+      .play-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        font-size: 32px;
+        z-index: 10;
+        color: #fff;
+        transform: translate(-50%) rotate(-90deg);
+        opacity: 0.85;
+      }
+
+      .cover {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        border-radius: 16px;
+        img {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          bottom: 0;
+          right: 0;
+          width: auto;
+          height: 100%;
+          transform: translateX(-50%);
+          object-fit: cover;
+        }
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          left: 0;
+          z-index: 2;
+          opacity: 0.65;
+        }
+        &::before {
+          top: 0;
+          height: 60px;
+          background: linear-gradient(0, rgba(14, 20, 28, 0) 0%, #0e141c 100%);
+        }
+        &::after {
+          opacity: 0.45;
+          bottom: 0;
+          height: 60px;
+          background: linear-gradient(
+            180deg,
+            rgba(14, 20, 28, 0) 0%,
+            #0e141c 100%
+          );
+        }
+      }
+      .cover-coin {
+        &::before {
+          height: 0px !important;
+        }
+        &::after {
+          height: 0px !important;
+        }
+      }
+
+      .detail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 4;
+        box-sizing: border-box;
+        padding: 8px;
+        font-size: 12px;
+        .avatar-img {
+          width: 18px;
+          height: 18px;
+        }
+        .info {
+          padding: 0 5px;
+          flex: 1;
+          width: 0%;
+          font-size: 10px;
+          .country-box {
+            overflow: hidden;
+            display: block;
+            text-overflow: ellipsis;
+          }
+          .name {
+            font-size: 13px;
+            height: 14px;
+          }
+          .location,
+          .name {
+            line-height: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          .location {
+            height: 12px;
+            margin-top: 4px;
+            transform: scale(0.8);
+            transform-origin: left center;
+            opacity: 0.7;
+          }
+        }
+      }
+      .tag-box {
+        position: absolute;
+        bottom: 70px;
+        text-align: center;
+        z-index: 9;
+        width: 100%;
+        display: none;
+      }
+
+      .god-name {
+        position: absolute;
+        box-sizing: border-box;
+        bottom: 45px;
+        z-index: 9;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: #ffffff;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        box-sizing: border-box;
+      }
+      .header-img {
+        position: absolute;
+        bottom: -30px;
+        width: 100%;
+        text-align: center;
+        z-index: 9;
+        .avatar-img {
+          margin: 0 auto;
+          width: 60px;
+          height: 60px;
+          border-radius: 60px;
+          display: none;
+        }
+        .ico-call2 {
+          position: absolute;
+          box-sizing: border-box;
+          transition: all 0.2s;
+          z-index: 100;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 10px;
+          padding: 10px;
+          background: linear-gradient(315deg, #00c4b3 0%, #68f6b4 100%);
+          border-radius: 50px;
+          color: #fff;
+          .icon-video2 {
+            font-size: 30px;
+          }
+        }
+      }
+      .ico-call {
+        position: absolute;
+        box-sizing: border-box;
+        transition: all 0.2s;
+        z-index: 100;
+        left: 50%;
+        display: none;
+        margin-left: -22px;
+        bottom: 20px;
+      }
+    }
+
+    .banner-item {
+      position: relative;
+
+      .icon-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 9;
+        color: #fff;
+      }
+
+      .top {
+        position: absolute;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        z-index: 9;
+        .coin-num {
+          font-size: 50px;
+          font-family: FranklinGothic-HeavyItalic, FranklinGothic;
+          font-weight: bolder;
+          color: rgba(156, 33, 20);
+          // text-shadow: 0px 0px 17px rgba(255,49,125,0.58);
+          // font-style: italic;
+        }
+        .coin-text {
+          margin-top: -18px;
+          font-size: 14px;
+          font-family: FranklinGothic-HeavyItalic, FranklinGothic;
+          font-weight: bolder;
+          color: rgba(173, 20, 10);
+          // text-shadow: 0px 0px 9px rgba(255,49,125,0.58);
+          // font-style: italic;
+        }
+      }
+      .bottom {
+        position: absolute;
+        bottom: 70px;
+        text-align: center;
+        z-index: 9;
+        width: 100%;
+        font-size: 16px;
+        font-weight: normal;
+        font-family: Helvetica-Bold, Helvetica;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.first-pay {
+          bottom: 60px;
+        }
+      }
+
+      .text {
+        padding: 0 5px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.first-pay {
+          padding-top: 22px !important;
+        }
+      }
+      .botton {
+        position: absolute;
+        bottom: 14px;
+        z-index: 9;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .botton-coin {
+          width: 137px;
+          height: 43px;
+          line-height: 43px;
+          text-align: center;
+          background: #101924;
+          border-radius: 8px;
+          font-size: 14px;
+          font-family: Helvetica-Bold, Helvetica;
+          font-weight: bold;
+          color: #ffffff;
+          &.btn-orange {
+            background: linear-gradient(180deg, #ffd625 0%, #ff7900 100%);
+          }
+          .arrow-right {
+            display: inline-block;
+            font-size: 12px;
+            transform: scaleX(-1);
+          }
+        }
+      }
+    }
+
+    // 列表占位样式
+    &.init {
+      .ogoddess {
+        .cover {
+          opacity: 0.6;
+          text-align: center;
+        }
+      }
+    }
+
+    // 正式数据列表样式
+    &.formal-list {
+      animation: fadeIn 0.2s both;
+    }
+  }
+
+  .load-more {
+    text-align: center;
+    padding: 40px 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon-loading {
+      width: 150px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #000;
+      border-radius: 40px;
+      padding: 5px 15px 5px 5px;
+      background: linear-gradient(135deg, #ff78ff 0%, #32e5ff 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        display: inlnie-block;
+      }
+      .icon {
+        width: 40px;
+        height: 40px;
+        display: inlnie-block;
+        background: url(~@/assets/img/img-load-black.png) center no-repeat;
+        background-size: 20px auto;
+        border-radius: 50%;
+        animation: rollAni 2s linear infinite;
+      }
+    }
+  }
+}
+
+// @media screen and(max-width: 1720px) {
+//   .goddess-wall {
+//     .goddess-list {
+//       grid-template-columns: repeat(6, 1fr);
+//     }
+//   }
+// }
+
+@media screen and(max-width: 1480px) {
+  .goddess-wall {
+    .goddess-list {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
+@media screen and(max-width: 1240px) {
+  .goddess-wall {
+    .goddess-list {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
+@media screen and(max-width: 1040px) {
+  .goddess-wall {
+    .goddess-list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+@media screen and(max-width: 800px) {
+  .goddess-wall {
+    .goddess-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+@media screen and(max-width: 480px) {
+  .goddess-wall {
+    .goddess-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and(max-width: 680px) {
+  // 女神墙
+  .goddess-wall {
+    .filter-box {
+      padding: 8px 10px 0;
+    }
+    .sort-tags {
+      margin: 4px 0 10px;
+      height: 30px;
+      .the-list {
+        padding: 0;
+        li {
+          font-size: 12px;
+          height: 28px;
+          margin-right: 12px;
+          span {
+            min-width: 40px;
+          }
+        }
+      }
+    }
+
+    .host-list {
+      padding: 50px 10px 20px;
+      min-height: 0;
+    }
+
+    .abnormal-box {
+      padding: 100px 20px 0;
+    }
+
+    .goddess-list {
+      padding: 0px 0px 20px;
+      grid-gap: 6px;
+      grid-template-columns: repeat(2, 1fr);
+      .ogoddess {
+        border-radius: 16px;
+        margin: 0;
+        .state-tag {
+          right: 6px;
+          top: 6px;
+          transform: scale(0.85);
+          transform-origin: top right;
+        }
+        .detail {
+          top: 24px;
+          padding: 6px 15px;
+          .avatar-img {
+            width: 12px;
+            height: 12px;
+          }
+          .info {
+            .name {
+              font-size: 10px;
+            }
+          }
+          .status-txt-tag {
+            padding: 2px 8px;
+            transform-origin: right center;
+            position: absolute;
+            right: 10px;
+            top: -10px;
+          }
+        }
+        .tag-box {
+          display: none;
+        }
+        .ico-call {
+          display: flex;
+          width: 44px;
+          height: 44px;
+          .icon-video2 {
+            font-size: 18px;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 54px;
+            height: 54px;
+            border: solid 1px #97ffcf;
+            border-radius: 50%;
+            animation: callBtnAni 2s infinite linear;
+          }
+        }
+        .header-img {
+          display: none;
+        }
+        .god-name {
+          top: 10px;
+          left: 0;
+          padding: 0 65px 0 15px;
+          bottom: auto;
+          font-size: 12px;
+          text-align: left;
+          font-weight: 700;
+        }
+      }
+      .banner-item {
+        .bottom {
+          bottom: 50px;
+          font-size: 14px;
+        }
+
+        .botton {
+          .botton-coin {
+            height: 37px;
+            line-height: 37px;
+          }
+
+          .arrow-right {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    &.init {
+      .goddess-list {
+        .ogoddess {
+          .detail {
+            top: 4px;
+          }
+        }
+      }
+    }
+
+    &.notag .goddess-list {
+      padding-top: 70px;
+    }
+    .load-more {
+      padding: 0px 0 0px;
+      .icon-loading {
+        width: 120px;
+        padding: 0 10px 0 0;
+      }
+    }
+  }
+}

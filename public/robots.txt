@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://gomeet.today/sitemap.xml

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>coomeet</title>
+    <script src="https://cdn.jsdelivr.net/npm/less@4" ></script>
+    <link rel="stylesheet" href="./enpage.css">
+</head>
+<body>
+  <div class="page-body">
+    <div class="home-page">
+      <div class="top-img"><img src="img/langding-gomeet.png" /></div>
+      <div class="page-top">
+        <h2>Looking for coomeet？</h2>
+        <p>Gomeet is you best alternative! Tap to start now!</p>
+      </div>
+      <div class="button">
+        <div class="play">Go to play</div>
+      </div>
+    </div>
+    <div class="langing-privacy">
+      <h2>Who are we？</h2>
+      <p>
+        Gomeet is the perfect platform that allows users to engage in one-on-one video chats and text chats. It offers an easy-to-use interface, making it a popular choice for those who want to make new friends all over the world. What are you waiting for? Just take one tap and expand your world. It's your best alternative for omegle, lucky crush, and coomeet. Come and try!
+      </p>
+      <div class="bottom-link">
+        <div class="link">
+          <a href="https://gomeet.today/privacy-policy" target="_blank">Privacy Policy</a>
+          <a href="https://gomeet.today/cookie-policy" target="_blank">Cookie Policy</a>
+          <a href="https://gomeet.today/terms-of-use" target="_blank">Terms of Use</a>
+          <a href="https://gomeet.today/community-guidelines" target="_blank">Community Guidelines</a>
+        </div>
+        <div class="langing-reserve">
+          <div>All rights reserved © Clash Arts HK Limited 2022</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+    var btns = document.querySelectorAll('.play');
+      for(var i = 0; i<btns.length; i++) {
+        btns[i].addEventListener('click', function(e){
+          console.log(1111)
+          localStorage.setItem('RC_FROM_LANDPAGE',1)
+          window.location.href="/" + window.location.search
+        })
+      }
+</script>
+</html>

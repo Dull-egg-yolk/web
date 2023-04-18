@@ -1,0 +1,702 @@
+@import url('~@/style/var.less');
+
+.pop-login-content {
+  border-radius: 20px;
+  overscroll-behavior: contain;
+  border:solid 1px  rgba(50, 229, 255, 0.12);
+  backdrop-filter: blur(20px);
+  .livcam-popUp {
+    display: none;
+  }
+  .login-main {
+    position: relative;
+    flex: 1;
+    .logo {
+      position: absolute;
+      top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      .img {
+        animation: slideUp 0.4s 0.2s both;
+        width: 126px;
+        height: 167px;
+        background: url(~@/assets/img/tumile/login_logo.png) center no-repeat;
+        background-size: 100% auto;
+      }
+    }
+    // logo
+    .active-number {
+      padding: 200px 0 30px;
+      text-align: center;
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      box-sizing: border-box;
+
+      .num {
+        font-size: 50px;
+        font-weight: bold;
+        color:#fff
+        // display: inline-block;
+      }
+
+      .slogn {
+        padding-top: 10px;
+        font-size: 12px;
+      }
+    }
+
+    // 回退按钮
+    .step-back {
+      position: absolute;
+      left: 24px;
+      top: 16px;
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      line-height: 30px;
+      text-align: center;
+      padding: 8px;
+      background: #0E141CFF;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .user-icon {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 16px;
+      width: 45px;
+      height: 45px;
+      background: #0e141ccc;
+      border-radius: 23px;
+      backdrop-filter: blur(7px);
+      margin: 0 auto;
+      line-height: 45px;
+      text-align: center;
+      margin-left: 10px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    // 登录分步骤
+    .login-step {
+      position: relative;
+
+      .txt-link{
+        color:#32E5FF;
+        text-decoration: underline;
+      }
+
+      .m-btn.disabled{
+        background:rgba(255,255,255,.15);
+      }
+
+      .m-input-box {
+        background:transparent;
+        border: 1px solid rgba(255,255,255,.15);
+        height:55px;
+      }
+
+      .ol-step {
+        position: absolute;
+        width: 100%;
+        padding: 95px 104px 0;
+        box-sizing: border-box;
+        height:480px;
+
+        &.step-1 {
+          padding-top: 320px;
+        }
+      }
+    }
+
+    .free-coins-tips{
+      height: 66px;
+      width: 270px;
+      border: 3px solid #FFAF00;
+      padding: 10px 15px;
+      box-sizing: border-box;
+      margin: 10px auto;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #FFFFFF;
+
+      .free-icon-coins {
+        width: 20px;
+        height: 20px;
+        margin-top: -20px;
+        display: inline-block;
+        background: url(~@/assets/img/icon-coin.png) center no-repeat;
+        background-size: 100% auto;
+        vertical-align: bottom;
+      }
+    }
+
+    // 通用样式
+    .login-m-title {
+      font-size: 24px;
+      line-height:1.25
+    }
+
+    .login-m-intro {
+      padding: 5px 0 60px 0;
+      font-size: 12px;
+    }
+
+    .login-m-action {
+      position: absolute;
+      bottom:40px;
+      left:0;
+      width:100%;
+      box-sizing: border-box;
+      display: flex;
+      box-sizing: border-box;
+      padding: 0 24px;
+    }
+
+    .login-m-info {
+      position: relative;
+      height: 40px;
+      padding: 0;
+      box-sizing: border-box;
+      margin-bottom: -40px;
+    }
+
+    // 登录中
+    .login-loading {
+      text-align: center;
+      padding-top: 360px;
+      position: relative;
+      z-index: 10;
+      height: 300px;
+
+      .img {
+        margin: 0 auto 20px;
+        width: 50px;
+        height: 50px;
+        background: url(~@/assets/img/img-load.png) center no-repeat;
+        background-size: 100% auto;
+        position: relative;
+        animation: rollAni 3s infinite linear;
+      }
+    }
+
+    // 协议信息
+    .use-terms {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      bottom: 20px;
+      padding: 18px 0;
+      left: 0;
+      width: 100%;
+      font-size: 12px;
+      transform: scale(0.85);
+      text-align: center;
+      a {
+        cursor: pointer;
+      }
+      .f-checkbox {
+        border-radius: unset;
+        margin-right: 10px;
+      }
+
+      .maskPop {
+        animation: shake 3s infinite;
+      }
+    }
+
+    // 三方快捷登录
+    .quick-login-box{
+      position:absolute;
+      text-align:center;
+      bottom:35px;
+      left:0;
+      width:100%;
+      .tips{
+        margin: 0 50px;
+        opacity: .35;
+        padding-bottom:12px;
+        position:relative;
+        padding: 0 50px 15px;
+        span{
+          position:relative;
+          z-index:4;
+          display: inline-block;
+          padding:0 10px;
+        }
+        &::after{
+          content: '';
+          position:absolute;
+          top:9px;
+          width:100%;
+          height:1px;
+          left:0;
+          border-top:dotted 1px rgba(255,255,255,.35)
+
+        }
+      }
+      .items{
+        .obtn{
+          width:50px;
+          height:50px;
+          border-radius: 50%;
+          margin: 0 10px;
+          &.google{
+            background:#fff url(~@/assets/img/icon-login-sf.png) 0 -50px no-repeat;
+            background-size: 100% auto;
+          }
+        }
+      }
+    }
+
+    .mask {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      width: 80%;
+      height: 150px;
+      text-align: center;
+    }
+  }
+
+  .logo-info {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 20px 0 0 20px;
+    position: relative;
+    overflow: hidden;
+
+    .video {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      border-radius: 20px 0 0 20px;
+      height: 100%;
+      overflow:hidden;
+
+      video {
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    .logo {
+      position: relative;
+      z-index: 10;
+
+      .img {
+        animation: slideUp 0.4s 0.2s both;
+        width: 126px;
+        height: 167px;
+        background: url(~@/assets/img/tumile/login_logo.png) center no-repeat;
+        background-size: 100% auto;
+      }
+    }
+
+    .num {
+      font-size: 32px;
+      font-weight: bolder;
+      letter-spacing: 5px;
+      padding-bottom: 10px;
+    }
+
+    p {
+      opacity: 0.8;
+    }
+  }
+}
+
+@keyframes loginLoadingImg {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%{
+    transform: translateX(0)
+  }
+  5%{
+    transform: translateX(6px)
+  }
+  10%{
+    transform:  translateX(-6px)
+  }
+  15%{
+    transform: translateX(6px)
+  }
+  20%{
+    transform:  translateX(0)
+  }
+}
+
+@keyframes loginLoadingTxt {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// mobile 样式;
+@media screen and(max-width: 680px) {
+  #app {
+    .pop-login {
+      justify-content: flex-end;
+
+      &.long{
+        &>.pop-content{
+          height:100%;
+          .pop-login-content{
+            height:100%;
+            overflow-y: auto;
+            .icon-cross{
+              display:block;
+            }
+            .step-1{
+              display:none;
+            }
+          }
+        }
+      }
+
+      &>.pop-content {
+        width: 100%;
+        height: 100%;
+      }
+
+      .pop-login-content {
+        border: none;
+        width: 100%;
+        height: 100%;
+        flex: 1;
+        border-radius: 20px 20px 0 0;
+        border-radius: 16px 16px 0px 0px;
+        backdrop-filter: blur(15px);
+
+        .logo-info {
+          display: none;
+        }
+
+        .login-main {
+          .logo {
+            position: absolute;
+            top: 25px;
+            .img {
+              width: 110px;
+              height: 150px;
+            }
+          }
+          .login-m-info{
+            margin-bottom: -10px;
+          }
+
+          .login-m-intro{
+            padding-bottom: 24px;
+          }
+          .active-number {
+            position: absolute;
+            top: -25px;
+            .num{
+              font-size:42px;
+            }
+            .slogn {
+              font-size: 14px;
+              padding-top:0;
+            }
+
+            .icon-logo {
+              font-size: 68px;
+            }
+
+
+          }
+          .free-coins-tips{
+            height: 60px;
+          }
+          .icon-cross{
+            // display:none;
+          }
+
+
+          .use-terms{
+            bottom: 10px;
+          }
+
+          .step-back {
+            font-size: 16px;
+            left: 4px;
+            top: 14px;
+          }
+          .user-icon {
+            font-size: 16px;
+            &.icon-cross{
+              font-size:14px;
+            }
+          }
+          .login-step {
+            height: 100%;
+            .ol-step {
+              padding: 150px 24px 50px;
+              height: auto;
+
+              &.step-1 {
+                padding-top: 260px;
+                // bottom: 20px;
+              }
+              &:not(.step-1) {
+                background:url(~@/assets/img/tumile/logo.png) 24px 90px no-repeat;
+                background-size: auto 34px;
+              }
+            }
+          }
+
+          .login-m-action {
+            padding: 30px 0 0;
+            position: initial;
+
+            .m-btn .major {
+              width: 100%;
+            }
+            .m-btn:hover {
+              opacity: 1;
+            }
+            .m-btn:active {
+              opacity: 0.8;
+              transition: none;
+            }
+          }
+
+          .login-loading {
+            padding-top: 300px;
+            height: 200px;
+          }
+        }
+        .livcam-popUp {
+          position: absolute;
+          display: inline-block;
+          // top: 225px;
+          // left: 0;
+          top: 240px;
+          z-index: 99;
+          width: 100%;
+          left:0;
+          .livcam-popbanner {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10px;
+            animation: flowAni 2s infinite;
+            img {
+              width: 100%;
+            }
+            .title-box {
+              display: flex;
+              flex-direction: column;
+              width: 80%;
+              position: absolute;
+              top: 43%;
+              left: 18%;
+            }
+            .title {
+              font-size: 12px;
+              font-family: Futura-Bold, Futura;
+              font-weight: bold;
+              color: #FFFFFF;
+              min-width: 122px;
+              text-align: center;
+              padding: 0 5px;
+            }
+            .coin{
+              margin:0 10px;
+              color: transparent;
+              -webkit-text-fill-color: #FF6939;
+              font-size: 24px;
+              font-weight: bold;
+              font-style:italic;
+              -webkit-text-stroke: #fff;
+              text-shadow: 0 0 0 10px #fff;
+            }
+            .img {
+              img{
+                width: 24px;
+              }
+            }
+          }
+        }
+      }
+
+      .pop-content .step-login-phone .area-list-box {
+        top: 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border-radius: 20px 20px 0 0;
+
+        .m-input-box{
+          height:42px;
+        }
+
+        &::before {
+          display: none;
+        }
+
+        .m-page-title {
+          display: flex;
+          position: initial;
+          background: transparent;
+        }
+
+        .search {
+          padding: 0 14px 10px;
+          .icon-search{
+            font-size:14px;
+            width:15px;
+            padding:0 0 0 10px;
+          }
+        }
+      }
+    }
+
+    .pop-supplyinfo {
+      .pop-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height:100%;
+        overflow:auto;
+        border-radius:0;
+        padding:10px;
+        box-sizing: border-box;
+        .top-tips{
+        }
+        .m-form{
+          width:100%;
+        }
+        .gender{
+          padding:0 10px;
+          .gender-box{
+            .gender-item{
+              padding:10px 0 10px 15px;
+              &:nth-child(1){
+                margin-right:10px;
+              }
+              .gender-desc{
+                margin-left:15px;
+              }
+            }
+          }
+        }
+        .nick-name{
+          .title{
+            padding-left:10px;
+          }
+          .desc {
+            padding-left:10px;
+            width:100px;
+            white-space: nowrap;
+
+          }
+          .name-inp,
+          .cell-right input{
+            padding-right:10px;
+          }
+          .cell-right{
+            .date-input{
+              padding-right:10px;
+            }
+          }
+        }
+        .nick-name,.gender{
+          margin-top:10px;
+        }
+        .nick-name,.gender,.head{
+          width:100%;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+
+}
+@media screen and (max-width: 375px){
+  #app .pop-login .pop-login-content .livcam-popUp .livcam-popbanner .title {
+    line-height: 15px;
+  }
+  #app .pop-login .pop-login-content .livcam-popUp .livcam-popbanner .title-box {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    position: absolute;
+    top: 37%;
+    left: 18%;
+  }
+}
+@media screen and (max-width: 375px){
+
+
+  #app .pop-login .pop-login-content .livcam-popUp {
+    // position: absolute;
+    // display: inline-block;
+    top: 180px;
+    // z-index: 99;
+    // width: 100%;
+    // left:0;
+  }
+  #app .pop-login .pop-login-content .login-main .logo {
+    position: absolute;
+    top: 10px;
+  }
+  #app .pop-login .pop-login-content .login-main .logo .img {
+      width: 80px;
+      height: 110px;
+  }
+  #app .pop-login .pop-login-content .login-main .active-number {
+    position: absolute;
+    top: -85px;
+    .num {
+      font-size: 30px;
+    }
+  }
+  #app .pop-login .pop-login-content .login-main .login-step .ol-step.step-1 {
+    padding-top: 200px;
+  }
+  #app .pop-login .pop-login-content .login-main .use-terms {
+    bottom: 5px;
+  }
+}

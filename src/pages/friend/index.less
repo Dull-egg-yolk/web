@@ -1,0 +1,130 @@
+@import url('~@/style/var.less');
+.friend-page {
+  height: 100%;
+  border-radius: 16px;
+
+  .im-page-side {
+
+    .search-box{
+      margin:0 15px 10px;
+    }
+
+    .m-cell-list {
+      .ocell.disabled {
+        opacity: 0.8;
+      }
+    }
+
+    .load-more {
+      text-align: center;
+      padding: 10px;
+    }
+  }
+
+  // 上线提醒
+  .online-reminder-list {
+    position: absolute;
+    top: 60px;
+    left: 324px;
+    background: #fff;
+    width: 360px;
+    z-index: 10;
+    box-shadow: -3px 2px 14px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid @cgray-7;
+    border-radius: 16px;
+
+    .m-page-title {
+      display: none;
+    }
+    .inner {
+      min-height: 400px;
+      max-height: 600px;
+      overflow: auto;
+      overscroll-behavior: contain;
+    }
+    .arrow {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: -20px;
+      top: 26px;
+      padding-left: 13px;
+      box-sizing: border-box;
+      overflow: hidden;
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: #fff;
+        border: solid 1px @cgray-7;
+        border-radius: 0 0 0 4px;
+        transform: rotate(45deg);
+        transform-origin: center center;
+      }
+    }
+    .ocell {
+      height: 68px;
+      padding: 0 15px;
+      .avatar-img {
+        width: 44px;
+        height: 44px;
+      }
+      .cell-main {
+        .name {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 680px) {
+  .friend-page {
+    border-radius: 0;
+    .online-reminder-list {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 101;
+      left: 0;
+      top: 0;
+      .inner {
+        height: 100%;
+        max-height: none;
+        box-sizing: border-box;
+        padding-top: 60px;
+      }
+      .m-page-title {
+        display: flex;
+        background: #fff;
+      }
+    }
+    .im-page-side {
+      width: 100%;
+      .im-page-title {
+        padding: 0 14px;
+        flex-direction: column;
+        .title-txt {
+          height: 60px;
+          flex: 0 0 auto;
+          line-height: 60px;
+        }
+        .action {
+          flex: 1;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          .m-input-box {
+            .icon {
+              font-size: 16px;
+              margin-left: 6px;
+            }
+            width: 100%;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+}

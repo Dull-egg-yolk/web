@@ -1,0 +1,67 @@
+.profile-page {
+  height:100%;
+  overflow:hidden;
+  .page-head {
+    position: absolute;
+    z-index: 12;
+    width: 100%;
+  }
+}
+.friend-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+
+  .btn {
+    cursor: pointer;
+    height: 55px;
+    width: 200px;
+    border-radius: 100px;
+    margin: 0 10px;
+    flex: 0 0 auto;
+    transition: all 0.4s;
+    .ico {
+      font-size: 25px;
+      margin-right: 10px;
+    }
+    .txt {
+      font-size: 14px;
+    }
+    .detail {
+      text-align: left;
+    }
+  }
+}
+
+
+@media screen and(max-width: 680px) {
+  .profile-page {
+    .friend-actions {
+      padding:15px 0;
+      .btn{
+        height:50px;
+        margin:0 5px;
+        .ico{
+          font-size:20px;
+        }
+      }
+      .btn-video{
+        width:160px;
+      }
+      .btn-chat{
+        width: 50px;
+        .ico{
+          margin:0;
+        }
+        .detail{
+          display:none;
+        }
+      }
+    }
+
+  }
+   
+}

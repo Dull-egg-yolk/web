@@ -1,0 +1,351 @@
+// vue transition 过度效果
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// 页面切换效果
+.sitefade-enter-active,
+.sitefade-leave-active {
+  transition: all 0.1s;
+}
+.sitefade-enter, .sitefade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0.5;
+  transform: translateY(2px);
+}
+
+// slideDown 动画效果
+.slideDown-enter-active,
+.slideDown-leave-active {
+  transition: all 0.1s;
+}
+.slideDown-enter, .slideDown-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+// slideUp 动画效果
+.slideUp-enter-active,
+.slideUp-leave-active {
+  transition: all 0.1s;
+}
+.slideUp-enter, .slideUp-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.stepAni-enter-active,
+.stepAni-leave-active {
+  position: absolute;
+  width: 100%;
+  transition: all 0.2s;
+}
+.stepAni-enter, .stepAni-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+// 公用动画
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpHide {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+}
+
+@keyframes loadingAni {
+  0% {
+    transform-origin: left center;
+    transform: scaleX(0.8);
+  }
+  50% {
+    transform-origin: left center;
+
+    transform: scaleX(1.2);
+  }
+  100% {
+    transform-origin: left center;
+
+    transform: scaleX(0.8);
+  }
+}
+
+@keyframes showExtend {
+  0% {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes hideExtend {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+}
+
+@keyframes bombShow {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// menu 动画
+@keyframes menuAni {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    background-position-y: -2px;
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(0.6);
+    background-position-y: -2px;
+  }
+  51% {
+    opacity: 0.2;
+    transform: scale(0.6);
+    background-position-y: -34px;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    background-position-y: -34px;
+  }
+}
+
+
+@keyframes jumpAni {
+
+  0%{
+    transform:translateY(4px) scale(1.025,0.975)
+  }
+
+  60%{
+    transform:translateY(-4px) scale(0.975,1.025)
+  }
+  70%{
+    transform:translateY(-4px) scale(1)
+  }
+  100%{
+    transform:translateY(4px) scale(1.025,0.975)
+  }
+}
+
+@keyframes ringavatar {
+  0% {
+    transform: translateY(8px);
+    box-shadow: 0 0 2px rgba(255, 224, 87, 0.2);
+  }
+  50% {
+    transform: translateY(-8px);
+    box-shadow: 0 0 124px rgba(255, 224, 87, 0.8);
+  }
+  100% {
+    transform: translateY(8px);
+    box-shadow: 0 0 2px rgba(255, 224, 87, 0.2);
+  }
+}
+
+
+
+@keyframes showPop {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) skew(0,6deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) skew(0,0);
+  }
+}
+@keyframes hidePop {
+  0% {
+    opacity: 1;
+    transform: translateY(0) skew(0,0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px) skew(0,-3deg);
+  }
+}
+
+@keyframes scaleAni {
+  0%{
+    transform: scale(0);
+  }
+  60%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes showToast {
+  0%{
+    opacity: 0;
+    transform: translateY(-4px) translateX(-50%);;
+  }
+  25%{
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+  75%{
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(4px) translateX(-50%);
+
+  }
+}
+
+
+@keyframes rollAni {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes likeAni {
+  0%{
+    transform: scale(1) translateY(0);
+  }
+  50%{
+    transform: scale(1.1) translateY(-6px);
+  }
+  80%{
+    transform: scale(0.9) translateY(4px);
+  }
+  100%{
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes callBtnAni {
+  0%{
+    opacity: .6;
+    transform: scale(0.8);
+  }
+  100%{
+    opacity: 0;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes callIconAni{
+  0%{
+    transform: scale(0.95) translateY(-5px);
+  }
+  50%{
+    transform: scale(1) translateY(0);
+  }
+  100%{
+    transform: scale(0.95) translateY(-5px);
+  }
+}
+@keyframes flowAni {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-5px);
+  }
+  100%{
+    transform: translateY(0);
+
+  }
+}
+
+@keyframes showAni {
+  0%{
+    transform: scale(0);
+  }
+  80%{
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(1)
+  }
+}
+@keyframes hideAni {
+  0%{
+    transform: scale(1);
+  }
+  20%{
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(0)
+  }
+}

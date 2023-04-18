@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<%= BASE_URL %>logo.png">
+    <link rel="dns-prefetch" href="https://d6d3wha0hetk7.cloudfront.net" />
+    <link rel="dns-prefetch" href="https://d36ywu50ghf221.cloudfront.net" />
+    <link rel="dns-prefetch" href="https://dy5h05bw5go7o.cloudfront.net" />
+    <meta property="og:image" content="https://h5.livuchat.com/static/images/logo/gomeet-logo.png"/>
+    <meta name="google" content="notranslate"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="LivUchat"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@livu_videochat"/>
+    <meta name="twitter:creator" content="@livu_videochat"/>
+    <meta name="twitter:image:src" content="https://h5.livuchat.com/static/images/logo/gomeet-logo.png"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="google-site-verification" content="R3e_9QlXRYaBDlFtszM3DT5-NY8ATY5mksHYaSbTG0M" />
+    <meta name="facebook-domain-verification" content="q0vt7nz8cu2gghjkt1poatwh4xuasv" />
+    <link rel="manifest" href="/manifest.json">
+    <nav style="display: none;">
+      <ul>
+        <li><a href="https://gomeet.today/about-us">About us</a></li>
+        <li><a href="https://support.gomeet.today/hc/en-us">Contact</a></li>
+        <li><a href="https://gomeet.today/community-guidelines">Community Guidelines</a></li>
+        <li><a href="https://gomeet.today/terms-of-use">Terms of use</a></li>
+        <li><a href="https://gomeet.today/privacy-policy">Privacy Policy</a></li>
+        <li><a href="https://gomeet.today/random-video-chat.html">Random Video Chat</a></li>
+      </ul>
+    </nav>
+    <script>
+       window.baseConfig = <%= JSON.stringify(htmlWebpackPlugin.options.config) %>
+       !function(e,t){function n(){t.body?t.body.style.fontSize=12+"px":t.addEventListener("DOMContentLoaded",n)}function d(){var e=i.clientWidth/10;i.style.fontSize=e+"px"}var i=t.documentElement,o=e.devicePixelRatio||1;if(n(),d(),e.addEventListener("resize",d),e.addEventListener("pageshow",function(e){e.persisted&&d()}),o>=2){var a=t.createElement("body"),s=t.createElement("div");s.style.border=".5px solid transparent",a.appendChild(s),i.appendChild(a),1===s.offsetHeight&&i.classList.add("hairlines"),i.removeChild(a)}}(window,document);
+    </script>
+      <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WFGCKL');</script>
+  <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-VW18V852LB"></script> -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBXWPZPFK1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // gtag('config', 'G-VW18V852LB');
+      // gtag('config', 'G-4W3F644TC4', {'groups':'livu' });
+      gtag('config', 'G-JBXWPZPFK1', {'groups':'livu' });
+      gtag('config', 'G-JBXWPZPFK1', {'groups':'AW-834247273/TQgKCNy00YIYEOm05o0D' })
+    </script>
+    <!-- <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script> -->
+    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
+
+	<script>
+		!function (w, d, t) {
+		  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++
+      )ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+            ttq.load('CFHR2MRC77U9H3ES6LBG');
+            ttq.page();
+          }(window, document, 'ttq');
+	</script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '515643357403869');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=515643357403869&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+     <!-- Google Tag Manager (noscript) -->
+     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WFGCKL"
+     height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

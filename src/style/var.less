@@ -1,0 +1,44 @@
+@cgray-1: #f4f4f6;
+@cgray-2: #cbcbd1;
+@cgray-3: #5c5c6d;
+@cgray-4: #333232;
+@cgray-5: #7d7d8b;
+@cgray-6: #f8f8f8;
+@cgray-7: #f0f0f0;
+@cgray-8: #a1a1a1;
+@cgray-9: #cccccc;
+@cgray-10: #d6d6d6;
+
+@cpurple-1: #6b10ff;
+@cpurple-2: #c166ff;
+
+@cred-1: #ff3b3b;
+@cred-2: #ff5224;
+
+@cpink-1: #ff3cc0;
+
+@cblue-1: #47aeff;
+@cblue-2: #3cb9ff;
+@cblue-3: #e1f7fe;
+@cblue-4: #0073f6;
+@cblue-5: #008bff;
+@cblue-6: #DBF6FF;
+
+@cyellow-1: #ffbb47;
+@cyellow-2: #ffee00;
+
+@cmint-1: #00ead6;
+
+@cgreen-1: #defff5;
+@cgreen-2: #8cf1d1;
+
+@gradient-purple: linear-gradient(270deg, #755dff 0%, #d569ff 100%);
+@gradient-red: linear-gradient(139deg, #ff4184 0%, #ff7053 100%);
+@gradient-yellow: linear-gradient(314deg, #ffd817 0%, #ffa617 100%);
+@gradient-blue: linear-gradient(118deg, #25c1ff 0%, #44adff 100%);
+@gradient-orange: linear-gradient(270deg, #ff9215 0%, #ffd53c 100%);
+
+.rem(@px,@attr: width) {
+  @val: @px/37.5;
+  @{attr}: ~'@{val}rem';
+}

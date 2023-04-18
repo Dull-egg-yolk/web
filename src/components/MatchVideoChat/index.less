@@ -1,0 +1,988 @@
+@import url('~@/style/var.less');
+
+.match-video-chat {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+
+  .pop-content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .user-report-pop {
+    position: absolute;
+    top: 75px;
+    left: 70%;
+    background: #17161F;
+    box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 50%);
+    border-radius: 12px;
+    padding: 15px 10px;
+    z-index: 999;
+
+    li {
+      min-width: 220px;
+      white-space: nowrap;
+      height: 40px;
+      color: #BEBCDF;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .info {
+      min-width: 220px;
+      white-space: nowrap;
+      height: 130px;
+      color: #BEBCDF;
+      font-size: 14px;
+      border: 1px solid #666464;
+      border-radius: 10px;
+      overflow: hidden;
+
+      textarea {
+        height: 100px;
+      }
+    }
+
+    .report {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .email {
+      border: 1px solid #666464;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 70px;
+
+      textarea {
+        height: 50px;
+        color: #fff;
+      }
+    }
+
+    textarea {
+      color: #fff;
+      width: 100%;
+      background-color: #17161F;
+      padding: 10px;
+    }
+
+    .ocell {
+      cursor: pointer;
+      // transition: all 0.3s;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+  }
+
+  .accept-success {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    background: rgba(0, 0, 0.6);
+    z-index: 12;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-size: 14px;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: showToast 2s both;
+  }
+
+  .accpet-addf {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 11;
+    left: 50%;
+    height: 100px;
+
+    .inner {
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, .6);
+      padding: 10px 10px 10px 20px;
+      border-radius: 40px;
+
+      .m-btn {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .cover-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    z-index: 2;
+    background: #1C172E;
+
+    img {
+      width: 100%;
+      height: 100%;
+      filter: blur(100px);
+      opacity: .15;
+      object-fit: cover;
+    }
+  }
+
+
+  .video-times {
+    position: absolute;
+    top: 25px;
+    left: 80px;
+    width: 100%;
+    font-size: 20px;
+    z-index: 10;
+    color: #fff;
+  }
+
+  .action-btn {
+    border-radius: 50%;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &.checked {
+      background: #fff;
+      color: @cgray-4;
+    }
+
+    &>* {
+      flex: 1;
+      display: inline-block;
+    }
+  }
+
+  .video-container {
+    box-sizing: border-box;
+    height: 100%;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+  }
+
+  .video-cell {
+    flex: 0 0 auto;
+    width: 70%;
+    position: relative;
+
+    .cancel-video {
+      position: fixed;
+      left: 25px;
+      top: 20px;
+      width: 36px;
+      height: 36px;
+      font-size: 18px;
+      z-index: 10;
+    }
+
+    .video-setting {
+      position: absolute;
+      top: 20px;
+      right: 10px;
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      z-index: 10;
+
+      .action-btn {
+        margin-right: 12px;
+        width: 36px;
+        height: 36px;
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+
+    .user-actions {
+      position: absolute;
+      right: 100px;
+      bottom: 30px;
+      z-index: 10;
+
+      .action-btn {
+        width: 56px;
+        height: 56px;
+        background-color: transparent;
+        text-align: center;
+      }
+
+      .thumb-up {
+        background: url(~@/assets/img/tumile/icon-ding-2.png) center no-repeat;
+        background-size: 48px auto;
+
+        &.ding {
+          opacity: .6;
+          animation: likeAni .35s both;
+        }
+      }
+    }
+
+    .coin-info {
+      font-size: 16px;
+      height: 40px;
+      padding: 0 5px 0 20px;
+      border-radius: 50px;
+      margin-left: 10px;
+      position: relative;
+
+      .recharge-pop {
+        position: absolute;
+        bottom: 56px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        font-size: 12px;
+        background: #000;
+        padding: 10px 20px;
+        border-radius: 50px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 14px;
+          height: 14px;
+          background: #000;
+          left: 50%;
+          bottom: -10px;
+          border-radius: 4px;
+          transform: rotate(45deg) translateX(-50%)
+        }
+
+        .m-btn {
+          margin-left: 10px;
+        }
+      }
+
+      .recharge-iframe {
+        position: absolute;
+        bottom: 56px;
+        right: -50px;
+        width: 360px;
+        height: 600px;
+        padding: 10px;
+        box-sizing: border-box;
+        background: #000;
+        border-radius: 12px;
+
+        .icon {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          font-size: 14px;
+          padding: 10px;
+          background: #000;
+          border-radius: 0 0 0 50%;
+        }
+
+        iframe {
+          border-radius: 10px;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .main-video {
+    width: 475px;
+    height: 100%;
+    position: relative;
+
+    .the-video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #313131 url(../../assets/img/video-loading.gif) center no-repeat;
+      background-size: auto 80px;
+      z-index: 0;
+      overflow: hidden;
+
+      > div {
+        background-color: transparent !important;
+      }
+
+      video {
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        // object-fit:fill;
+        object-fit: cover
+      }
+    }
+
+    .user-detail {
+      position: absolute;
+      z-index: 8;
+      left: 238px;
+      bottom: 40px;
+      background: rgba(0, 0, 0, 0.62);
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      border-radius: 100px;
+      padding: 4px;
+      transform: translateX(-50%);
+
+      .avatar-img {
+        width: 52px;
+        height: 52px;
+      }
+
+      .detail {
+        flex: 1;
+        padding-left: 10px;
+        line-height: 1;
+        min-width: 120px;
+
+        .country-box {
+          display: inline-flex;
+          margin-left: 4px;
+        }
+
+        .name,
+        .small-font {
+          max-width: 120px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .name {
+          font-size: 14px;
+          height: 16px;
+          margin-bottom: 2px;
+        }
+
+        .small-font {
+          opacity: 0.5;
+          height: 12px;
+          transform-origin: left center;
+        }
+      }
+
+      .btn-addfriend {
+        margin-left: 20px;
+        width: 52px;
+        height: 52px;
+        color: #fff;
+        font-size: 14px;
+        border-radius: 100%;
+        background-image: linear-gradient(90deg, #FF6F20 0%, #F317B0 100%);
+      }
+    }
+
+  }
+
+  .mini-video {
+    position: absolute;
+    left: 478px;
+    top: 0;
+    width: 162px;
+    height: 270px;
+    background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .the-video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      background: #000;
+    }
+
+    .change {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: url(../../assets/img/tumile/icon-video-replace.png) center no-repeat;
+      background-size: 100% auto;
+      text-align: center;
+      line-height: 40px;
+      left: 10px;
+      bottom: 10px;
+      opacity: 0;
+      transition: all 0.3s;
+      font-size: 0;
+      z-index: 10;
+    }
+
+    &:hover .change {
+      opacity: 1;
+    }
+
+  }
+
+  .chat-cell {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    border-left: solid 1px rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    padding: 240px 20px 0 0;
+    box-sizing: border-box;
+    width: 0%;
+
+    .chat-title {
+      height: 60px;
+      padding: 0 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      .name {
+        font-size: 18px;
+      }
+    }
+
+    .odialog {
+      margin: 10px 0 !important;
+
+      &.me {
+        flex-direction: row;
+
+        .txt {
+          color: #fff !important;
+          border-radius: 12px !important;
+        }
+      }
+
+      .txt {
+        border-radius: 12px !important;
+        background: rgb(0 0 0 0.33) !important;
+      }
+    }
+  }
+
+  // 变形
+  .dialog-box {
+    justify-content: flex-end !important;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+
+    .gift-list {
+      position: fixed;
+      right: 0;
+      max-width: 440px;
+    }
+
+    .dialog-list {
+      padding-bottom: 10px;
+
+      .odialog {
+        margin-top: 12px;
+
+        .avatar {
+          display: none;
+        }
+
+        &.me,
+        & {
+          .txt {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    .dialog-action {
+      padding-top: 0;
+      padding-bottom: 30px;
+      border-top: 0;
+
+      .dialog-quick-btn {
+        position: fixed;
+        bottom: 24px;
+        right: 5px;
+        width: auto;
+
+        .obtn {
+          display: none;
+
+          &.gift {
+            display: block;
+
+            .ico {
+              background-color: rgba(255, 255, 255, .1)
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .quick-gift {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 80px 10px;
+
+    .ogift {
+      text-align: center;
+      margin: 6px 0;
+
+      img {
+        width: 60px;
+        height: 60px;
+        display: block;
+      }
+
+      .coin {
+        display: inline-block;
+        font-size: 12px;
+        padding-left: 14px;
+        background: url(~@/assets/img/tumile/icon-s-coin.png) left center no-repeat;
+        background-size: auto 12px;
+      }
+    }
+
+  }
+
+  .match-tips-mask {
+    display: none;
+  }
+}
+
+// 窄屏 样式;
+@media screen and(max-width: 1280px) {
+  .match-video-chat {
+    .quick-gift {
+      display: none;
+    }
+  }
+}
+
+@media screen and(max-width: 1180px) {
+  .match-video-chat {
+    .quick-gift {
+      display: none;
+    }
+  }
+}
+
+@media screen and(max-width: 860px) {
+  #app {
+    .match-video-chat {
+      .user-report-pop{
+        left: 65%;
+      }
+      .video-times {
+        width: auto;
+        left: 10px;
+        top: 50px;
+        font-size: 12px;
+      }
+
+      .quick-gift {
+        display: none;
+      }
+
+      .action-btn {
+        background-color: rgba(0, 0, 0, .2);
+      }
+
+      .accept-success {
+        font-size: 12px;
+        top: 60px;
+        border-radius: 20px;
+        width: 200px;
+      }
+
+      .accpet-addf {
+        top: 80px;
+        left: 0;
+        height: auto;
+
+        .inner {
+          transform: translateX(0);
+          border-radius: 0 50px 50px 0;
+          padding: 4px 4px 4px 20px;
+        }
+
+      }
+
+      .video-container {
+        .video-cell {
+          width: 100%;
+
+          .main-video {
+            width: 100%;
+
+            .user-detail {
+              left: 50px;
+              top: 10px;
+              bottom: auto;
+              transform: translateX(0);
+              padding: 3px;
+              background: rgba(0, 0, 0, .4);
+
+              .avatar-img {
+                width: 30px;
+                height: 30px;
+              }
+
+              .detail {
+                padding-left: 4px;
+
+                .name {
+                  font-weight: normal;
+                  font-size: 12px;
+                  line-height: 1;
+                  height: 12px;
+                }
+              }
+
+              .btn-addfriend {
+                width: 30px;
+                height: 30px;
+                margin-left: 0;
+              }
+            }
+
+
+          }
+
+          .mini-video {
+            top: 60px;
+            right: 10px;
+            left: auto;
+            width: 110px;
+            height: 150px;
+            z-index: 2;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: constant(safe-area-inset-bottom);
+            margin-bottom: env(safe-area-inset-bottom);
+
+            .times {
+              padding: 4px 8px;
+              font-size: 10px;
+              line-height: 1;
+            }
+          }
+
+          .cancel-video {
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, .25);
+            font-size: 16px;
+          }
+
+          .video-setting {
+            top: 10px;
+            right: 0;
+
+            .volume {
+              display: none;
+            }
+
+          }
+
+          .coin-info {
+            width: 0;
+            height: 0;
+
+            .recharge-pop {
+              left: auto;
+              right: -60px;
+              transform: translate(0);
+              &::after {
+                left: 88%;
+              }
+            }
+
+            .btn {
+              display: none;
+            }
+
+            .recharge-iframe {
+              position: fixed;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              border-radius: 20px 20px 0 0;
+              padding: 0;
+              height: 400px;
+
+              .icon {
+                top: 0;
+                right: 0;
+              }
+
+              iframe {
+                border-radius: 20px 20px 0 0;
+              }
+
+            }
+          }
+
+          .user-actions {
+            left: 272px;
+            right: auto;
+            bottom: 10px;
+            z-index: 20;
+
+            .thumb-up {
+              width: 40px;
+              height: 40px;
+              background-size: 32px auto;
+            }
+          }
+        }
+
+        .chat-cell {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          z-index: 1;
+          height: 240px;
+          width: 100%;
+          background: transparent;
+          border-radius: 0;
+          padding: 0;
+          border: 0;
+          padding-bottom: constant(safe-area-inset-bottom);
+          padding-bottom: env(safe-area-inset-bottom);
+
+          .chat-title {
+            display: none;
+          }
+
+          .dialog-box {
+            .dialog-placeholder {
+              display: none;
+            }
+          }
+
+          .dialog-list {
+            padding: 0 14px;
+
+            .odialog {
+              margin: 8px 0;
+              position: relative;
+
+              &.me {
+                flex-direction: row;
+              }
+
+              .txt {
+                margin: 0;
+                padding: 6px 12px;
+                min-height: auto;
+                font-size: 12px;
+              }
+
+              .avatar {
+                position: absolute;
+                left: 6px;
+                top: 6px;
+                width: 34px;
+                height: 34px;
+              }
+            }
+          }
+
+          .dialog-action {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            padding: 0 0 10px;
+            margin: 0 10px;
+
+            .dialog-quick-btn {
+              border: 0;
+              bottom: 10px;
+              right: 0;
+              padding-bottom: constant(safe-area-inset-bottom);
+              padding-bottom: env(safe-area-inset-bottom);
+
+              .gift {
+                width: 42px;
+                height: 42px;
+
+                .ico {
+                  width: 42px;
+                  height: 42px;
+                  background-color: rgba(0, 0, 0, .25)
+                }
+              }
+            }
+          }
+
+          .dialog-send {
+            border: none;
+            height: auto;
+            position: relative;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 40px;
+            height: 38px;
+
+            .translate {
+              left: 6px;
+              top: 8px;
+              width: 30px;
+            }
+
+            .textArea {
+              margin: 0 15px 0 0;
+            }
+
+            textarea {
+              display: inline-block;
+              width: auto;
+              margin: 0;
+              padding: 0 5px;
+              line-height: 40px;
+              white-space: nowrap;
+              height: 40px;
+            }
+
+            // .btn-send {
+            //   display: none;
+            // }
+          }
+        }
+      }
+    }
+  }
+
+  [lang="ar"],
+  [lang="he"],
+  [lang="ur"] {
+    .match-video-chat .video-container .video-cell .cancel-video {
+      transform: rotate(180deg);
+    }
+    
+    .match-video-chat .video-container .video-cell .main-video .user-detail .detail {
+      text-align: left;
+    }
+    #app .video-chat .video-container .video-cell .mini-video{
+      left:10px;
+      right: auto;
+    }
+    #app .video-chat .video-container .chat-cell .dialog-action .dialog-quick-btn{
+      left: 0;
+      right: auto;
+    }
+    .match-video-chat .video-container .chat-cell .dialog-send .translate {
+      left: 6px;
+      top: 8px;
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    .match-video-chat .accpet-addf .inner .m-btn {
+      margin-left: 0px;
+      margin-right: 20px;
+    }
+
+    .match-video-chat .video-container .video-cell .coin-info .recharge-iframe {
+      right: 0;
+    }
+  }
+
+}
+
+
+@media screen and(max-width: 680px) {
+
+  .match-video-chat {
+
+    .match-tips-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000000CC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+
+      .match-tips-box {
+        text-align: center;
+        font-size: 0;
+
+        .match-tips-img {
+
+          img {
+            display: inline-block;
+            width: 85px;
+            height: 75px;
+            animation: swingAni 1.5s infinite linear;
+          }
+        }
+
+
+        @keyframes swingAni {
+          0% {
+            transform: rotate(0);
+          }
+
+          25% {
+            transform: rotate(5deg);
+          }
+
+          50% {
+            transform: rotate(10deg);
+          }
+
+          75% {
+            transform: rotate(-5deg);
+          }
+
+          100% {
+            transform: rotate(0);
+          }
+        }
+
+        p {
+          font-size: 14px;
+          color: #FFFFFF99;
+          margin-top: 9px;
+        }
+      }
+    }
+
+    .swiper-mask-box {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 50px;
+      bottom: 70px;
+      z-index: 2;
+
+      &.low-level {
+        z-index: 1;
+      }
+    }
+
+  }
+  #app .video-chat .video-container .chat-cell .dialog-send{
+    width: 100%;
+  }
+
+}

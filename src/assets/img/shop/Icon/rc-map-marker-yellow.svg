@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="图层_1" x="0px" y="0px" viewBox="0 0 13 20" style="enable-background:new 0 0 13 20;" xml:space="preserve">
+<g>
+	<defs>
+		<path id="SVGID_1_"
+              d="M8.296,16.548c0.018,0.053,0.027,0.109,0.027,0.164c0,0.565-0.932,1.023-2.08,1.023s-2.08-0.458-2.08-1.023    c0-0.056,0.01-0.11,0.027-0.164c-1.26,0.235-2.108,0.678-2.108,1.187c0,0.754,1.863,1.364,4.161,1.364s4.161-0.61,4.161-1.364    C10.402,17.226,9.554,16.782,8.296,16.548z M12.48,5.978C12.48,2.677,9.505,0,6.199,0S0,2.677,0,5.978    c0,3.061,6.13,10.391,6.13,10.391S12.48,9.141,12.48,5.978z"/>
+	</defs>
+    <clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_" style="overflow:visible;"/>
+	</clipPath>
+    <g style="clip-path:url(#SVGID_2_);">
+		<defs>
+			<rect id="SVGID_3_" x="-298.56" y="-147.36" width="360" height="640"/>
+		</defs>
+        <clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_" style="overflow:visible;"/>
+		</clipPath>
+        <rect x="-5" y="-5" style="clip-path:url(#SVGID_4_);fill:#FEDA00;" width="22.48" height="29.099"/>
+	</g>
+</g>
+    <g>
+	<defs>
+		<path id="SVGID_5_" d="M3.744,6.228c0-1.375,1.118-2.491,2.496-2.491c1.379,0,2.496,1.114,2.496,2.491S7.618,8.719,6.24,8.719    C4.862,8.717,3.744,7.603,3.744,6.228z"/>
+	</defs>
+        <clipPath id="SVGID_6_">
+		<use xlink:href="#SVGID_5_" style="overflow:visible;"/>
+	</clipPath>
+        <g style="clip-path:url(#SVGID_6_);">
+		<defs>
+			<rect id="SVGID_7_" x="-298.56" y="-147.36" width="360" height="640"/>
+		</defs>
+            <clipPath id="SVGID_8_">
+			<use xlink:href="#SVGID_7_" style="overflow:visible;"/>
+		</clipPath>
+            <rect x="-1.256" y="-1.263" style="opacity:1;clip-path:url(#SVGID_8_);fill:#6e00db;" width="14.992" height="14.982"/>
+	</g>
+</g>
+</svg>

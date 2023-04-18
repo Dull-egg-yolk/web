@@ -1,0 +1,236 @@
+.page-body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  overflow-y: scroll;
+  background-color: #0B0505;
+  font-family: Futura-Medium, Futura;
+}
+.page-body .home-page {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: url(img/lpg2-1.jpg) center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.page-body .home-page .top-img {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.page-body .home-page .top-img img {
+  display: block;
+  width: 150px;
+  height: 40px;
+}
+.page-body .home-page .page-top {
+  position: absolute;
+  width: 100%;
+  bottom: 100px;
+  color: #fff;
+}
+.page-body .home-page .page-top h2 {
+  padding-top: 900px;
+  padding: 30px 0 0 0;
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+  line-height: 50px;
+}
+.page-body .home-page .page-top p {
+  padding: 5px 40px 10px 40px;
+  text-align: center;
+  font-size: 14px;
+}
+.page-body .home-page .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+}
+.page-body .home-page .button .play {
+  width: 250px;
+  height: 55px;
+  border-radius: 38px;
+  color: #fff;
+  line-height: 55px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(111deg, #F99E47 0%, #FF3463 100%);
+  animation: callIconAni 2s infinite;
+}
+.page-body .langing-privacy {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: url(img/lpg2-2.jpg) center center no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+.page-body .langing-privacy h2 {
+  padding: 30px 0 0 0;
+  font-size: 26px;
+  text-align: center;
+  line-height: 50px;
+}
+.page-body .langing-privacy p {
+  padding: 5px 40px 10px 40px;
+  font-size: 14px;
+  text-align: center;
+}
+.page-body .langing-privacy .bottom-link {
+  background: rgba(11, 11, 11, 0.55);
+}
+.page-body .langing-privacy .link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  padding-top: 30px;
+}
+.page-body .langing-privacy .link a {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.page-body .langing-privacy .langing-reserve {
+  padding-bottom: 15px;
+  width: 100%;
+}
+.page-body .langing-privacy .langing-reserve div {
+  text-align: center;
+  font-size: 10px;
+}
+@media screen and (max-width: 680px) {
+  .page-body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    overflow-y: scroll;
+    background-color: #0B0505;
+  }
+  .page-body .home-page {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: url(img/lpg2-1.jpg) center center no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .page-body .home-page .top-img {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .page-body .home-page .page-top {
+    position: absolute;
+    bottom: 100px;
+    color: #fff;
+  }
+  .page-body .home-page .page-top h2 {
+    padding-top: 900px;
+    padding: 30px 0 0 0;
+    color: #fff;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+  }
+  .page-body .home-page .page-top p {
+    padding: 5px 40px 10px 40px;
+    text-align: center;
+    font-size: 14px;
+  }
+  .page-body .home-page .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+  }
+  .page-body .home-page .button .play {
+    width: 250px;
+    height: 55px;
+    border-radius: 38px;
+    color: #fff;
+    line-height: 55px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(111deg, #F99E47 0%, #FF3463 100%);
+    animation: callIconAni 2s infinite;
+  }
+  .page-body .langing-privacy {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: url(img/lpg2-2.jpg) center center no-repeat;
+    background-size: cover;
+    color: #fff;
+  }
+  .page-body .langing-privacy h2 {
+    padding: 30px 0 0 0;
+    font-size: 26px;
+    text-align: center;
+    line-height: 50px;
+  }
+  .page-body .langing-privacy p {
+    padding: 5px 40px 10px 40px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .page-body .langing-privacy .bottom-link {
+    background: rgba(11, 11, 11, 0.55);
+  }
+  .page-body .langing-privacy .link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    padding-top: 30px;
+  }
+  .page-body .langing-privacy .link a {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  .page-body .langing-privacy .langing-reserve {
+    padding-bottom: 15px;
+    width: 100%;
+  }
+  .page-body .langing-privacy .langing-reserve div {
+    text-align: center;
+    font-size: 10px;
+  }
+}
+@keyframes callIconAni {
+  0% {
+    transform: scale(0.95) translateY(-5px);
+  }
+  50% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(0.95) translateY(-5px);
+  }
+}
